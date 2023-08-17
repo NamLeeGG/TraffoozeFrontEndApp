@@ -12,7 +12,6 @@ import {
 } from 'react-native';
 import { Stack, useRouter } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
-import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import { COLORS, icons, images, SIZES, FONT } from "../constants";
 import {
@@ -26,9 +25,6 @@ const Home = () => {
     const router = useRouter();
     const [searchTerm, setSearchTerm] = useState("");
     const [isDrawerOpen, setIsDrawerOpen] = useState(false);
-    const [userToken, setUserToken] = useState(null);
-
-    const isMounted = useRef(true);
 
     const screenWidth = Dimensions.get('window').width;
     const drawerWidth = screenWidth * 0.65;
@@ -57,20 +53,6 @@ const Home = () => {
       router.push(route);
     };
 
-    /*
-    useEffect(() => {
-      const fetchToken = async () => {
-          const token = await AsyncStorage.getItem('token');
-          if (isMounted.current) {
-              setUserToken(token);
-          }
-      };
-
-      fetchToken();
-      return () => isMounted.current = false; // Cleanup on unmount
-    }, []);
-    */
-  
     return (
       <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.lightBlue }}>
           <StatusBar style="dark" />
@@ -104,9 +86,7 @@ const Home = () => {
                         if (global.token != null) {
                             try {
                                 delete global.token;
-                                // await AsyncStorage.removeItem('token');
-                                setUserToken(null);  // update the state
-                                Alert.alert("Success", "Deleted!");
+                                Alert.alert("Success", "Log Out!");
                             } catch (error) {
                                 Alert.alert("Error", "Failed to remove the token. Please try again.");
                             }

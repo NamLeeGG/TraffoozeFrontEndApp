@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, Image, SafeAreaView, Alert, TouchableOpacity, ActivityIndicator, TouchableWithoutFeedback, Keyboard } from 'react-native';
-import { StatusBar } from 'expo-status-bar';
 import { Stack, useRouter } from 'expo-router';
 import axios from 'axios';
-import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import { COLORS, FONT, icons, images, SIZES } from "../../constants";
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
@@ -28,7 +26,7 @@ const LoginPage = () => {
 
         setLoading(true);
 
-        axios.post('https://traffooze.vercel.app/login/', {
+        axios.post('https://traffoozebackend.vercel.app/login/', {
             username: username,
             password: password
         })

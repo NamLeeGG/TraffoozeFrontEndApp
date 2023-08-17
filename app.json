@@ -5,6 +5,12 @@
       "bundler": "metro"
     },
     "name": "TraffoozeFrontendApp",
-    "slug": "TraffoozeFrontendApp"
+    "slug": "traffooze",
+    "extra": {
+      "eas": {
+        "projectId": "c6a9d3c8-3e33-458e-ad90-bd8a3bc14d0a"
+      }
+    },
+    "owner": "traffooze"
   }
 }

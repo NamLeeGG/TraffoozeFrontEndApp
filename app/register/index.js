@@ -17,30 +17,43 @@ const RegisterPage = () => {
     const router = useRouter();
 
     const [username, setUsername] = useState("");
+    const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
 
     const [loading, setLoading] = useState(false);
 
+    const isValidEmail = (email) => {
+        const regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+        return regex.test(email);
+    };    
+
     const handleRegister = () => {
         // Check if all fields are provided
-        if (!username.trim() || !password.trim() || !confirmPassword.trim()) {
+        if (!username.trim() || !email.trim() || !password.trim() || !confirmPassword.trim()) {
             Alert.alert("Error", "Please fill out all the fields.");
             return;
-        }
+        };
+        
+        // Validate email format
+        if (!isValidEmail(email)) {
+            Alert.alert("Error", "Please provide a valid email address.");
+            return;
+        };
 
         // Check if passwords match
         if (password !== confirmPassword) {
             Alert.alert("Error", "Passwords don't match. Please check and try again.");
             return;
-        }
+        };
 
         setLoading(true);
 
         // You can proceed with the API request now
-        axios.post('https://traffooze.vercel.app/register/', {
+        axios.post('https://traffoozebackend.vercel.app/register/', {
             username: username,
-            password: password
+            password: password,
+            email: email
         })
         .then(response => {
             setLoading(false);
@@ -86,6 +99,20 @@ const RegisterPage = () => {
                     keyboardType="email-address"
                     value={username}
                     onChangeText={(text) => setUsername(text)}
+                />
+                <InputField
+                    label={'Email'}
+                    icon={
+                        <MaterialIcons
+                            name="email"
+                            size={20}
+                            color="#666"
+                            style={{ marginRight: 5 }}
+                        />
+                    }
+                    keyboardType="email-address"
+                    value={email}
+                    onChangeText={(text) => setEmail(text)}
                 />
 
                 <InputField

@@ -19,32 +19,55 @@ const ObjSearch = () => {
     const [searchError, setSearchError] = useState(null);
     const [page, setPage] = useState(1);
 
+    // Function to sort the data array based on date and time
+    const sortDataByDateTime = (data) => {
+        return [...data].sort((a, b) => {
+            // Split date and time for both a and b
+            const [dayA, monthA, yearA] = a.date.split('/');
+            const [hourA, minuteA] = a.time.split(':');
+            
+            const [dayB, monthB, yearB] = b.date.split('/');
+            const [hourB, minuteB] = b.time.split(':');
+
+            // Compare year, then month, then day, then hour, then minute
+            if(yearA !== yearB) return yearB - yearA;
+            if(monthA !== monthB) return monthB - monthA;
+            if(dayA !== dayB) return dayB - dayA;
+            if(hourA !== hourB) return hourB - hourA;
+            return minuteB - minuteA;
+        });
+    };
+
     const handleSearch = async () => {
         setSearchLoader(true);
-        setSearchResult([])
-
+        setSearchResult([]);
+        
         try {
-            /*
-            const options = {
-                method: "GET",
-                url: `https://jsearch.p.rapidapi.com/search`,
-                headers: {
-                    "X-RapidAPI-Key": '',
-                    "X-RapidAPI-Host": "jsearch.p.rapidapi.com",
-                },
-                params: {
-                    query: params.id,
-                    page: page.toString(),
-                },
-            };
-            
-            const response = await axios.request(options);
-            setSearchResult(response.data.data);
-            */
-            const objsearchlist = data.filter(item => 
-                item.message.toLowerCase().includes(params.id.toLowerCase()) ||
-                item.obj_type.toLowerCase().replace(/\s/g, '').includes(params.id.toLowerCase().replace(/\s/g, ''))
-            );                        
+            // First, sort the data by date and time
+            const sortedData = sortDataByDateTime(data);
+    
+            let objsearchlist = [];  // Initialize as empty
+    
+            if (params.id.toLowerCase() === "all") {
+                // Slice sorted data to get only the first 50 items
+                objsearchlist = sortedData.slice(0, 50);
+            } else {
+                objsearchlist = sortedData.filter(item => {
+                    const message = item.message.toLowerCase();
+                
+                    switch (params.id) {
+                        case "Traffic Jam":
+                            return message.includes("heavy traffic");
+                        case "Road Accident":
+                            return message.includes("accident");
+                        case "Road Closure":
+                            return message.includes("road closure") || message.includes("roadblock");
+                        default:
+                            return message.includes(params.id.toLowerCase());
+                    }
+                });
+            }
+    
             setSearchResult(objsearchlist);
         } catch (error) {
             setSearchError(error);
@@ -99,11 +122,10 @@ const ObjSearch = () => {
                 renderItem={({ item }) => (
                     <ObjListCard
                         item={item}
-                        key={`nearby-obj-${item.obj_id}`}
-                        handleNavigate={() => router.push(`/obj-details/${item.obj_id}`)}
+                        handleNavigate={() => router.push(`/obj-details/${item.message}`)}
                     />
                 )}
-                keyExtractor={(item) => item.obj_id}
+                keyExtractor={(item) => item.message}
                 contentContainerStyle={{ padding: SIZES.medium, rowGap: SIZES.medium }}
                 ListHeaderComponent={() => (
                     <>

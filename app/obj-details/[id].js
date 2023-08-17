@@ -22,7 +22,7 @@ const ObjDetails = () => {
     const router = useRouter();
 
     const { data, isLoading, error, refetch } = useFetch();
-    const objDetail = data.find(item => item.obj_id == params.id);
+    const objDetail = data.find(item => item.message == params.id);
 
     const [refreshing, setRefreshing] = useState(false);
     const onRefresh = useCallback(() => {
@@ -63,7 +63,6 @@ const ObjDetails = () => {
                     ) : (
                         <View style={{ padding: SIZES.medium, paddingBottom: 100 }}>
                             <TrafficUpdateDetail
-                                obj_type={objDetail.obj_type}
                                 date={objDetail.date}
                                 time={objDetail.time}
                                 message={objDetail.message}
