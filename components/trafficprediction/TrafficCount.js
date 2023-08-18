@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { View, StyleSheet, Text, Alert, TouchableOpacity, ActivityIndicator, Image } from 'react-native';
+import { View, StyleSheet, Text, Alert, TouchableOpacity, ActivityIndicator, Image, Platform } from 'react-native';
 import { Dropdown } from 'react-native-element-dropdown';
 import DateTimePicker from '@react-native-community/datetimepicker';
 import axios from 'axios';
@@ -10,10 +10,15 @@ const TrafficCount = () => {
     const [roads, setRoads] = useState([]);
     const [selectedRoad, setSelectedRoad] = useState({});
     const [date, setDate] = useState(new Date());
-    const [showPicker, setShowPicker] = useState(false);
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState(null);
     const [forecastSummary, setForecastSummary] = useState(null);
+    const [mode, setMode] = useState('date');  // possible values: 'date', 'time'
+    const [showDate, setShowDate] = useState(false);
+    const [showTime, setShowTime] = useState(false);
+
+    const maxDate = new Date();
+    maxDate.setDate(maxDate.getDate() + 5);
 
     useEffect(() => {
         setIsLoading(true);
@@ -35,11 +40,69 @@ const TrafficCount = () => {
             });
     }, []);
 
-    const onDateChange = (event, selectedDate) => {
-        const currentDate = selectedDate || date;
-        setShowPicker(false);  // Hide picker after date is selected
-        setDate(currentDate);
-    };
+    const onDateChange = (event, selectedValue) => {
+        if (event.type === 'set') { // when a date/time is selected
+            if (mode === 'date') {
+                setDate(new Date(selectedValue));
+                setShowDate(false);
+                setMode('time');
+                setShowTime(true);
+            } else {
+                const currentTime = selectedValue;
+                let tempDate = date; // This will take the date from the state
+    
+                // Check if the selected date is the current date
+                const now = new Date();
+                if (tempDate.toDateString() === now.toDateString()) {
+                    // check if the selected time is earlier than the current time
+                    if (currentTime < now) {
+                        // set the time to the current time
+                        setDate(now);
+                    } else {
+                        const finalDateTime = new Date(
+                            tempDate.getFullYear(),
+                            tempDate.getMonth(),
+                            tempDate.getDate(),
+                            currentTime.getHours(),
+                            currentTime.getMinutes()
+                        );
+                        setDate(finalDateTime);
+                    }
+                }
+                // Check if the selected date is the maximum date (5 days from now)
+                else if (tempDate.toDateString() === maxDate.toDateString()) {
+                    // check if the selected time is later than the current time
+                    if (currentTime.getHours() > now.getHours() ||
+                        (currentTime.getHours() === now.getHours() && currentTime.getMinutes() > now.getMinutes())) {
+                        // set the time to the current time
+                        setDate(now);
+                    } else {
+                        const finalDateTime = new Date(
+                            tempDate.getFullYear(),
+                            tempDate.getMonth(),
+                            tempDate.getDate(),
+                            currentTime.getHours(),
+                            currentTime.getMinutes()
+                        );
+                        setDate(finalDateTime);
+                    }
+                } else {
+                    const finalDateTime = new Date(
+                        tempDate.getFullYear(),
+                        tempDate.getMonth(),
+                        tempDate.getDate(),
+                        currentTime.getHours(),
+                        currentTime.getMinutes()
+                    );
+                    setDate(finalDateTime);
+                }
+                setShowTime(false);
+            }
+        } else {
+            if (mode === 'date') setShowDate(false);
+            else setShowTime(false);
+        }
+    };          
 
     function formatDateToLocalISOString(date) {
         const pad = num => String(num).padStart(2, '0');
@@ -69,6 +132,7 @@ const TrafficCount = () => {
             axios.post('https://traffooze-flask.onrender.com/get_traffic_count', requestData)
                 .then(response => {
                     // Handle the response here if needed
+                    console.log(response.data);
                     setForecastSummary({
                         numberofvehicles: response.data.count[0],
                     });                                                                
@@ -82,6 +146,7 @@ const TrafficCount = () => {
         } else {
             // Handle the case where either the road or datetime is not selected
             Alert.alert("Warning", "Please select a road and datetime.");
+            setIsLoading(false);
         }
     };
 
@@ -113,24 +178,35 @@ const TrafficCount = () => {
             />
 
             <Text style={styles.label}>Date and Time</Text>
-            <TouchableOpacity onPress={() => setShowPicker(true)} style={styles.dateInput}>
+
+            <TouchableOpacity onPress={() => { setMode('date'); setShowDate(true); }} style={styles.dateInput}>
                 <Text>{date.toLocaleString()}</Text>
             </TouchableOpacity>
-            
-            {showPicker && (
+
+            {showDate && (
                 <DateTimePicker
                     value={date}
-                    mode='datetime'
+                    mode="date"
                     display='default'
                     onChange={onDateChange}
-                    minimumDate={new Date()}
+                    minimumDate={new Date()} // from current moment
+                    maximumDate={maxDate} // no more than 5 days from now
+                />
+            )}
+
+            {showTime && (
+                <DateTimePicker
+                    value={date}
+                    mode="time"
+                    display='default'
+                    onChange={onDateChange}
                 />
             )}
 
             <TouchableOpacity style={styles.forecastButton} onPress={handleGenerateForecast}>
                 <Text style={styles.forecastButtonText}>Generate Forecast</Text>
             </TouchableOpacity>
-            
+
             {
                 forecastSummary && (
                     <View style={styles.forecastCard}>

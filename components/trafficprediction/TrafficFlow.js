@@ -17,7 +17,12 @@ const TrafficFlow = () => {
     const [forecastSpeed, setForecastSpeed] = useState([]);
     const [forecastTimestamps, setForecastTimestamps] = useState([]);
     const [forecastSummary, setForecastSummary] = useState(null);
+    const [mode, setMode] = useState('date');  // possible values: 'date', 'time'
+    const [showDate, setShowDate] = useState(false);
+    const [showTime, setShowTime] = useState(false);
 
+    const maxDate = new Date();
+    maxDate.setDate(maxDate.getDate() + 5);
 
     const fetchMetadata = async () => {
         try {
@@ -38,10 +43,68 @@ const TrafficFlow = () => {
         fetchMetadata();
     }, []);
 
-    const onDateChange = (event, selectedDate) => {
-        const currentDate = selectedDate || date;
-        setShowPicker(false);  // Hide picker after date is selected
-        setDate(currentDate);
+    const onDateChange = (event, selectedValue) => {
+        if (event.type === 'set') { // when a date/time is selected
+            if (mode === 'date') {
+                setDate(new Date(selectedValue));
+                setShowDate(false);
+                setMode('time');
+                setShowTime(true);
+            } else {
+                const currentTime = selectedValue;
+                let tempDate = date; // This will take the date from the state
+    
+                // Check if the selected date is the current date
+                const now = new Date();
+                if (tempDate.toDateString() === now.toDateString()) {
+                    // check if the selected time is earlier than the current time
+                    if (currentTime < now) {
+                        // set the time to the current time
+                        setDate(now);
+                    } else {
+                        const finalDateTime = new Date(
+                            tempDate.getFullYear(),
+                            tempDate.getMonth(),
+                            tempDate.getDate(),
+                            currentTime.getHours(),
+                            currentTime.getMinutes()
+                        );
+                        setDate(finalDateTime);
+                    }
+                }
+                // Check if the selected date is the maximum date (5 days from now)
+                else if (tempDate.toDateString() === maxDate.toDateString()) {
+                    // check if the selected time is later than the current time
+                    if (currentTime.getHours() > now.getHours() ||
+                        (currentTime.getHours() === now.getHours() && currentTime.getMinutes() > now.getMinutes())) {
+                        // set the time to the current time
+                        setDate(now);
+                    } else {
+                        const finalDateTime = new Date(
+                            tempDate.getFullYear(),
+                            tempDate.getMonth(),
+                            tempDate.getDate(),
+                            currentTime.getHours(),
+                            currentTime.getMinutes()
+                        );
+                        setDate(finalDateTime);
+                    }
+                } else {
+                    const finalDateTime = new Date(
+                        tempDate.getFullYear(),
+                        tempDate.getMonth(),
+                        tempDate.getDate(),
+                        currentTime.getHours(),
+                        currentTime.getMinutes()
+                    );
+                    setDate(finalDateTime);
+                }
+                setShowTime(false);
+            }
+        } else {
+            if (mode === 'date') setShowDate(false);
+            else setShowTime(false);
+        }
     };
 
     function formatDateToLocalISOString(date) {
@@ -135,17 +198,27 @@ const TrafficFlow = () => {
             />
 
             <Text style={styles.label}>Date and Time</Text>
-            <TouchableOpacity onPress={() => setShowPicker(true)} style={styles.dateInput}>
+            <TouchableOpacity onPress={() => { setMode('date'); setShowDate(true); }} style={styles.dateInput}>
                 <Text>{date.toLocaleString()}</Text>
             </TouchableOpacity>
-            
-            {showPicker && (
+
+            {showDate && (
                 <DateTimePicker
                     value={date}
-                    mode='datetime'
+                    mode="date"
                     display='default'
                     onChange={onDateChange}
-                    minimumDate={new Date()}
+                    minimumDate={new Date()} // from current moment
+                    maximumDate={maxDate} // no more than 5 days from now
+                />
+            )}
+
+            {showTime && (
+                <DateTimePicker
+                    value={date}
+                    mode="time"
+                    display='default'
+                    onChange={onDateChange}
                 />
             )}
 
