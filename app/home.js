@@ -84,12 +84,7 @@ const Home = () => {
                     handlePress={() => {
                       const handlePressAsync = async () => {
                         if (global.token != null) {
-                            try {
-                                delete global.token;
-                                Alert.alert("Success", "Log Out!");
-                            } catch (error) {
-                                Alert.alert("Error", "Failed to remove the token. Please try again.");
-                            }
+                            router.push(`/account`);
                         } else {
                             router.push(`/login`);
                         }

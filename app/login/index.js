@@ -39,7 +39,10 @@ const LoginPage = () => {
                     // Save the token locally using AsyncStorage
                     // await AsyncStorage.setItem('token', response.data.token);
                     global.token = response.data.token;
-                    Alert.alert("Success", "Logged in successfully!");
+                    global.accountname = username;
+                    Alert.alert('Success', 'You have successfully logged in!', [
+                        { text: 'OK', onPress: () => router.back() }
+                    ]);
                 } catch (error) {
                     // Handle any error that occurred during saving the token
                     Alert.alert("Error", "Failed to save the token. Please try again.");
