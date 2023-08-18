@@ -20,8 +20,8 @@ const styles = StyleSheet.create({
         color: COLORS.primary,
         fontFamily: FONT.bold,
         textAlign: "left",
-        marginTop: -140,
-        marginBottom: 30,
+        marginTop: -50,
+        marginBottom: 20,
         marginLeft: 30,
     },
     input: {
@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
         borderColor: COLORS.gray,
         borderRadius: 8,
         fontSize: 16,
-        marginBottom: 10,
+        marginBottom: 5,
         backgroundColor: '#fff'
     },
     button: {
@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
         backgroundColor: COLORS.primary,
         alignItems: 'center',
         borderRadius: 8,
-        marginBottom: 12 // spacing between buttons
+        marginBottom: 1 // spacing between buttons
     },
     buttonText: {
         color: '#FFF',

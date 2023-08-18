@@ -150,10 +150,10 @@ const RegisterPage = () => {
                 onPress={handleRegister}
                 style={{
                     backgroundColor: COLORS.darkBlue,
-                    padding: 20,
+                    padding: 18,
                     borderRadius: 10,
-                    marginBottom: 40,
-                    marginTop: 20,
+                    marginBottom: 20,
+                    marginTop: 15,
                     marginHorizontal: 30,
                 }}>
                 {loading ? (
@@ -161,10 +161,10 @@ const RegisterPage = () => {
                 ) : (
                     <Text
                         style={{
-                        textAlign: 'center',
-                        fontWeight: '700',
-                        fontSize: 16,
-                        color: '#fff',
+                            textAlign: 'center',
+                            fontWeight: '700',
+                            fontSize: 16,
+                            color: '#fff',
                         }}>
                         Register
                     </Text>
