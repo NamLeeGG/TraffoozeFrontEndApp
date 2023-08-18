@@ -1,0 +1,625 @@
+[
+    {
+        "camera_id": 1001,
+        "latitude": 1.29531332,
+        "longitude": 103.871146,
+        "address": "KPE/ECP, East Coast Parkway, Tanjong Rhu, Kallang, Southeast, 437440, Singapore",
+        "label": "1001 - KPE/ECP, East Coast Parkway, Tanjong Rhu, Kallang, Southeast, 437440, Singapore"
+    },
+    {
+        "camera_id": 1002,
+        "latitude": 1.319541067,
+        "longitude": 103.8785627,
+        "address": "Kallang Bahru, Aljunied Walk, Geylang, Southeast, 387293, Singapore",
+        "label": "1002 - Kallang Bahru, Aljunied Walk, Geylang, Southeast, 387293, Singapore"
+    },
+    {
+        "camera_id": 1003,
+        "latitude": 1.323957439,
+        "longitude": 103.8728576,
+        "address": "KPE/PIE, Pan-Island Expressway, Geylang, Southeast, 339630, Singapore",
+        "label": "1003 - KPE/PIE, Pan-Island Expressway, Geylang, Southeast, 339630, Singapore"
+    },
+    {
+        "camera_id": 1004,
+        "latitude": 1.319535712,
+        "longitude": 103.8750668,
+        "address": "Kallang Way Flyover, Geylang, Southeast, 339695, Singapore",
+        "label": "1004 - Kallang Way Flyover, Geylang, Southeast, 339695, Singapore"
+    },
+    {
+        "camera_id": 1005,
+        "latitude": 1.363519886,
+        "longitude": 103.905394,
+        "address": "Defu Flyover, Kallang-Paya Lebar Expressway, Paya Lebar, Northeast, 530325, Singapore",
+        "label": "1005 - Defu Flyover, Kallang-Paya Lebar Expressway, Paya Lebar, Northeast, 530325, Singapore"
+    },
+    {
+        "camera_id": 1006,
+        "latitude": 1.357098686,
+        "longitude": 103.902042,
+        "address": "Kallang-Paya Lebar Expressway, Paya Lebar, Northeast, 539356, Singapore",
+        "label": "1006 - Kallang-Paya Lebar Expressway, Paya Lebar, Northeast, 539356, Singapore"
+    },
+    {
+        "camera_id": 1111,
+        "latitude": 1.365434,
+        "longitude": 103.953997,
+        "address": "Tampines Expressway, Pasir Ris, Northeast, 510126, Singapore",
+        "label": "1111 - Tampines Expressway, Pasir Ris, Northeast, 510126, Singapore"
+    },
+    {
+        "camera_id": 1112,
+        "latitude": 1.3605,
+        "longitude": 103.961412,
+        "address": "Loyang Avenue, Pasir Ris, Northeast, 510149, Singapore",
+        "label": "1112 - Loyang Avenue, Pasir Ris, Northeast, 510149, Singapore"
+    },
+    {
+        "camera_id": 1113,
+        "latitude": 1.317036,
+        "longitude": 103.988598,
+        "address": "On-Road Cycling Lane, Changi, Southeast, 498736, Singapore",
+        "label": "1113 - On-Road Cycling Lane, Changi, Southeast, 498736, Singapore"
+    },
+    {
+        "camera_id": 1501,
+        "latitude": 1.27414394350065,
+        "longitude": 103.851316802547,
+        "address": "Maxwell Road, Marina Coastal Expressway, Downtown Central, Downtown Core, Singapore, Central, 018962, Singapore",
+        "label": "1501 - Maxwell Road, Marina Coastal Expressway, Downtown Central, Downtown Core, Singapore, Central, 018962, Singapore"
+    },
+    {
+        "camera_id": 1502,
+        "latitude": 1.27135090682664,
+        "longitude": 103.861828440597,
+        "address": "Marina Link, Straits View, Singapore, Central, 018988, Singapore",
+        "label": "1502 - Marina Link, Straits View, Singapore, Central, 018988, Singapore"
+    },
+    {
+        "camera_id": 1503,
+        "latitude": 1.27066408655104,
+        "longitude": 103.856977943394,
+        "address": "MCE 1.02km, Marina Coastal Expressway, Straits View, Singapore, Central, 018990, Singapore",
+        "label": "1503 - MCE 1.02km, Marina Coastal Expressway, Straits View, Singapore, Central, 018990, Singapore"
+    },
+    {
+        "camera_id": 1504,
+        "latitude": 1.29409891409364,
+        "longitude": 103.876056196568,
+        "address": "MCE/ECP, Marina Coastal Expressway, Marina East, Southeast, 437437, Singapore",
+        "label": "1504 - MCE/ECP, Marina Coastal Expressway, Marina East, Southeast, 437437, Singapore"
+    },
+    {
+        "camera_id": 1505,
+        "latitude": 1.2752977149006,
+        "longitude": 103.866390381759,
+        "address": "Marina Boulevard, Marina Coastal Expressway, Marina South, Singapore, Central, 018988, Singapore",
+        "label": "1505 - Marina Boulevard, Marina Coastal Expressway, Marina South, Singapore, Central, 018988, Singapore"
+    },
+    {
+        "camera_id": 1701,
+        "latitude": 1.323604823,
+        "longitude": 103.8587802,
+        "address": "7, Saint George's Lane, Kallang, Singapore, Central, 320007, Singapore",
+        "label": "1701 - 7, Saint George's Lane, Kallang, Singapore, Central, 320007, Singapore"
+    },
+    {
+        "camera_id": 1702,
+        "latitude": 1.34355015,
+        "longitude": 103.8601984,
+        "address": "Braddell Flyover, Central Expressway, Bishan, Southeast, 359363, Singapore",
+        "label": "1702 - Braddell Flyover, Central Expressway, Bishan, Southeast, 359363, Singapore"
+    },
+    {
+        "camera_id": 1703,
+        "latitude": 1.32814722194857,
+        "longitude": 103.862203282048,
+        "address": "St George Road, Central Expressway, Kallang, Singapore, Central, 328704, Singapore",
+        "label": "1703 - St George Road, Central Expressway, Kallang, Singapore, Central, 328704, Singapore"
+    },
+    {
+        "camera_id": 1704,
+        "latitude": 1.28569398886979,
+        "longitude": 103.837524510188,
+        "address": "Chin Swee Road, People's Park, Outram, Singapore, Central, 168622, Singapore",
+        "label": "1704 - Chin Swee Road, People's Park, Outram, Singapore, Central, 168622, Singapore"
+    },
+    {
+        "camera_id": 1705,
+        "latitude": 1.375925022,
+        "longitude": 103.8587986,
+        "address": "Central Expressway, Ang Mo Kio, Singapore, Central, 560551, Singapore",
+        "label": "1705 - Central Expressway, Ang Mo Kio, Singapore, Central, 560551, Singapore"
+    },
+    {
+        "camera_id": 1706,
+        "latitude": 1.38861,
+        "longitude": 103.85806,
+        "address": "Central Expressway, Ang Mo Kio, Central, 806105, Singapore",
+        "label": "1706 - Central Expressway, Ang Mo Kio, Central, 806105, Singapore"
+    },
+    {
+        "camera_id": 1707,
+        "latitude": 1.28036584335876,
+        "longitude": 103.830451146503,
+        "address": "Bukit Merah Flyover, Central Expressway, Radin Mas, Bukit Merah, Singapore, Central, 169545, Singapore",
+        "label": "1707 - Bukit Merah Flyover, Central Expressway, Radin Mas, Bukit Merah, Singapore, Central, 169545, Singapore"
+    },
+    {
+        "camera_id": 1709,
+        "latitude": 1.31384231654635,
+        "longitude": 103.845603032574,
+        "address": "Exit 6 to Bukit Timah Road, Kampong Java Road, Kallang, Singapore, Central, 228864, Singapore",
+        "label": "1709 - Exit 6 to Bukit Timah Road, Kampong Java Road, Kallang, Singapore, Central, 228864, Singapore"
+    },
+    {
+        "camera_id": 1711,
+        "latitude": 1.35296,
+        "longitude": 103.85719,
+        "address": "Central Expressway, Mei Hwan, Serangoon, Southeast, 579828, Singapore",
+        "label": "1711 - Central Expressway, Mei Hwan, Serangoon, Southeast, 579828, Singapore"
+    },
+    {
+        "camera_id": 2701,
+        "latitude": 1.447023728,
+        "longitude": 103.7716543,
+        "address": "214, Marsiling Lane, Woodlands, Singapore, Northwest, 730214, Singapore",
+        "label": "2701 - 214, Marsiling Lane, Woodlands, Singapore, Northwest, 730214, Singapore"
+    },
+    {
+        "camera_id": 2702,
+        "latitude": 1.445554109,
+        "longitude": 103.7683397,
+        "address": "Woodlands Checkpoint, 21, Woodlands Crossing, Woodlands, Singapore, Northwest, 738203, Singapore",
+        "label": "2702 - Woodlands Checkpoint, 21, Woodlands Crossing, Woodlands, Singapore, Northwest, 738203, Singapore"
+    },
+    {
+        "camera_id": 2703,
+        "latitude": 1.35047790791386,
+        "longitude": 103.791033581325,
+        "address": "Central Water Catchment, Northwest, 286966, Singapore",
+        "label": "2703 - Central Water Catchment, Northwest, 286966, Singapore"
+    },
+    {
+        "camera_id": 2704,
+        "latitude": 1.429588536,
+        "longitude": 103.769311,
+        "address": "Woodlands Flyover (Towards Checkpoint), Bukit Timah Expressway, Sungei Kadut, Northwest, 738799, Singapore",
+        "label": "2704 - Woodlands Flyover (Towards Checkpoint), Bukit Timah Expressway, Sungei Kadut, Northwest, 738799, Singapore"
+    },
+    {
+        "camera_id": 2705,
+        "latitude": 1.36728572,
+        "longitude": 103.7794698,
+        "address": "Dairy Farm Flyover, Bukit Timah Expressway, Central Water Catchment, Northwest, 679518, Singapore",
+        "label": "2705 - Dairy Farm Flyover, Bukit Timah Expressway, Central Water Catchment, Northwest, 679518, Singapore"
+    },
+    {
+        "camera_id": 2707,
+        "latitude": 1.3983,
+        "longitude": 103.774247,
+        "address": "Bukit Timah Expressway, Central Water Catchment, Northwest, 677721, Singapore",
+        "label": "2707 - Bukit Timah Expressway, Central Water Catchment, Northwest, 677721, Singapore"
+    },
+    {
+        "camera_id": 2708,
+        "latitude": 1.3865,
+        "longitude": 103.7747,
+        "address": "Exit 5 to KJE (Towards Checkpoint), Bukit Timah Expressway, Fajar, Bukit Panjang, Northwest, 679944, Singapore",
+        "label": "2708 - Exit 5 to KJE (Towards Checkpoint), Bukit Timah Expressway, Fajar, Bukit Panjang, Northwest, 679944, Singapore"
+    },
+    {
+        "camera_id": 3702,
+        "latitude": 1.33831,
+        "longitude": 103.98032,
+        "address": "Entrance from PIE, East Coast Parkway, Changi, Southeast, 819665, Singapore",
+        "label": "3702 - Entrance from PIE, East Coast Parkway, Changi, Southeast, 819665, Singapore"
+    },
+    {
+        "camera_id": 3704,
+        "latitude": 1.2958550156561,
+        "longitude": 103.880314665981,
+        "address": "Entrance from MCE, East Coast Parkway, Tanjong Rhu, Kallang, Southeast, 431014, Singapore",
+        "label": "3704 - Entrance from MCE, East Coast Parkway, Tanjong Rhu, Kallang, Southeast, 431014, Singapore"
+    },
+    {
+        "camera_id": 3705,
+        "latitude": 1.32743,
+        "longitude": 103.97383,
+        "address": "East Coast Parkway, Changi Business Park, Southeast, 499739, Singapore",
+        "label": "3705 - East Coast Parkway, Changi Business Park, Southeast, 499739, Singapore"
+    },
+    {
+        "camera_id": 3793,
+        "latitude": 1.309330837,
+        "longitude": 103.9350504,
+        "address": "Laguna Flyover, East Coast Parkway, Bedok, Southeast, 449294, Singapore",
+        "label": "3793 - Laguna Flyover, East Coast Parkway, Bedok, Southeast, 449294, Singapore"
+    },
+    {
+        "camera_id": 3795,
+        "latitude": 1.30145145166066,
+        "longitude": 103.910596320237,
+        "address": "Marine Parade Flyover, East Coast Parkway, Marine Parade, Southeast, 440078, Singapore",
+        "label": "3795 - Marine Parade Flyover, East Coast Parkway, Marine Parade, Southeast, 440078, Singapore"
+    },
+    {
+        "camera_id": 3796,
+        "latitude": 1.297512569,
+        "longitude": 103.8983019,
+        "address": "Tanjong Katong Flyover, Tanjong Katong Road South, Marine Parade, Southeast, 449874, Singapore",
+        "label": "3796 - Tanjong Katong Flyover, Tanjong Katong Road South, Marine Parade, Southeast, 449874, Singapore"
+    },
+    {
+        "camera_id": 3797,
+        "latitude": 1.29565733262976,
+        "longitude": 103.885283049309,
+        "address": "Tanjong Rhu Flyover, East Coast Parkway, Marine Parade, Southeast, 437874, Singapore",
+        "label": "3797 - Tanjong Rhu Flyover, East Coast Parkway, Marine Parade, Southeast, 437874, Singapore"
+    },
+    {
+        "camera_id": 3798,
+        "latitude": 1.29158484,
+        "longitude": 103.8615987,
+        "address": "Marina Centre Terminal, Marina Centre, Downtown Core, Singapore, Central, 039193, Singapore",
+        "label": "3798 - Marina Centre Terminal, Marina Centre, Downtown Core, Singapore, Central, 039193, Singapore"
+    },
+    {
+        "camera_id": 4701,
+        "latitude": 1.2871,
+        "longitude": 103.79633,
+        "address": "Towards Alexandra Road, Ayer Rajah Expressway, Queenstown, Singapore, Central, 118998, Singapore",
+        "label": "4701 - Towards Alexandra Road, Ayer Rajah Expressway, Queenstown, Singapore, Central, 118998, Singapore"
+    },
+    {
+        "camera_id": 4702,
+        "latitude": 1.27237,
+        "longitude": 103.8324,
+        "address": "Ayer Rajah Expressway, Radin Mas, Bukit Merah, Singapore, Central, 099418, Singapore",
+        "label": "4702 - Ayer Rajah Expressway, Radin Mas, Bukit Merah, Singapore, Central, 099418, Singapore"
+    },
+    {
+        "camera_id": 4703,
+        "latitude": 1.348697862,
+        "longitude": 103.6350413,
+        "address": "Second Link at Tuas, Tuas Checkpoint - Block A1, Tuas, Southwest, 639937, Singapore",
+        "label": "4703 - Second Link at Tuas, Tuas Checkpoint - Block A1, Tuas, Southwest, 639937, Singapore"
+    },
+    {
+        "camera_id": 4704,
+        "latitude": 1.27877,
+        "longitude": 103.82375,
+        "address": "Lower Delta Flyover, Ayer Rajah Expressway, Radin Mas, Bukit Merah, Singapore, Central, 169208, Singapore",
+        "label": "4704 - Lower Delta Flyover, Ayer Rajah Expressway, Radin Mas, Bukit Merah, Singapore, Central, 169208, Singapore"
+    },
+    {
+        "camera_id": 4705,
+        "latitude": 1.32618,
+        "longitude": 103.73028,
+        "address": "Yuan Ching Road, Ayer Rajah Expressway, Jurong East, Southwest, 618274, Singapore",
+        "label": "4705 - Yuan Ching Road, Ayer Rajah Expressway, Jurong East, Southwest, 618274, Singapore"
+    },
+    {
+        "camera_id": 4706,
+        "latitude": 1.29792,
+        "longitude": 103.78205,
+        "address": "Ayer Rajah Expressway, one-north, Southwest, 117541, Singapore",
+        "label": "4706 - Ayer Rajah Expressway, one-north, Southwest, 117541, Singapore"
+    },
+    {
+        "camera_id": 4707,
+        "latitude": 1.33344648135658,
+        "longitude": 103.652700847056,
+        "address": "Jalan Ahmad Ibrahim, Western Water Catchment, Southwest, 638377, Singapore",
+        "label": "4707 - Jalan Ahmad Ibrahim, Western Water Catchment, Southwest, 638377, Singapore"
+    },
+    {
+        "camera_id": 4708,
+        "latitude": 1.29939,
+        "longitude": 103.7799,
+        "address": "Near Dover Drive, Ayer Rajah Expressway, Queenstown, Southwest, 138683, Singapore",
+        "label": "4708 - Near Dover Drive, Ayer Rajah Expressway, Queenstown, Southwest, 138683, Singapore"
+    },
+    {
+        "camera_id": 4709,
+        "latitude": 1.312019,
+        "longitude": 103.763002,
+        "address": "Clementi Avenue 6 Entrance, Ayer Rajah Expressway, Westpeak Terrace, Clementi, Southwest, 120428, Singapore",
+        "label": "4709 - Clementi Avenue 6 Entrance, Ayer Rajah Expressway, Westpeak Terrace, Clementi, Southwest, 120428, Singapore"
+    },
+    {
+        "camera_id": 4710,
+        "latitude": 1.32153,
+        "longitude": 103.75273,
+        "address": "Towards Pandan Gardens, Ayer Rajah Expressway, Faber Crest, Clementi, Southwest, 126754, Singapore",
+        "label": "4710 - Towards Pandan Gardens, Ayer Rajah Expressway, Faber Crest, Clementi, Southwest, 126754, Singapore"
+    },
+    {
+        "camera_id": 4712,
+        "latitude": 1.341244001,
+        "longitude": 103.6439134,
+        "address": "Jalan Ahmad Ibrahim, Tuas, Southwest, 638377, Singapore",
+        "label": "4712 - Jalan Ahmad Ibrahim, Tuas, Southwest, 638377, Singapore"
+    },
+    {
+        "camera_id": 4713,
+        "latitude": 1.347645829,
+        "longitude": 103.6366955,
+        "address": "Tuas, Southwest, 639937, Singapore",
+        "label": "4713 - Tuas, Southwest, 639937, Singapore"
+    },
+    {
+        "camera_id": 4714,
+        "latitude": 1.31023,
+        "longitude": 103.76438,
+        "address": "Near West Coast Walk, Ayer Rajah Expressway, The Clementview, Clementi, Southwest, 120426, Singapore",
+        "label": "4714 - Near West Coast Walk, Ayer Rajah Expressway, The Clementview, Clementi, Southwest, 120426, Singapore"
+    },
+    {
+        "camera_id": 4716,
+        "latitude": 1.32227,
+        "longitude": 103.67453,
+        "address": "Ayer Rajah Expressway, Pioneer, Southwest, 628117, Singapore",
+        "label": "4716 - Ayer Rajah Expressway, Pioneer, Southwest, 628117, Singapore"
+    },
+    {
+        "camera_id": 4798,
+        "latitude": 1.25999999687243,
+        "longitude": 103.823611110166,
+        "address": "Sentosa Gateway (Towards Telok Blangah), Sentosa Boardwalk, Bukit Merah, Southwest, 098137, Singapore",
+        "label": "4798 - Sentosa Gateway (Towards Telok Blangah), Sentosa Boardwalk, Bukit Merah, Southwest, 098137, Singapore"
+    },
+    {
+        "camera_id": 4799,
+        "latitude": 1.26027777363278,
+        "longitude": 103.823888890049,
+        "address": "Brani Causeway, Keppel Terminal, Bukit Merah, Singapore, Southwest, 098585, Singapore",
+        "label": "4799 - Brani Causeway, Keppel Terminal, Bukit Merah, Singapore, Southwest, 098585, Singapore"
+    },
+    {
+        "camera_id": 5794,
+        "latitude": 1.3309693,
+        "longitude": 103.9168616,
+        "address": "Bedok North, Pan-Island Expressway, Chai Chee, Bedok, Southeast, 469032, Singapore",
+        "label": "5794 - Bedok North, Pan-Island Expressway, Chai Chee, Bedok, Southeast, 469032, Singapore"
+    },
+    {
+        "camera_id": 5795,
+        "latitude": 1.326024822,
+        "longitude": 103.905625,
+        "address": "Eunos Flyover, Pan-Island Expressway, Bedok, Northeast, 419592, Singapore",
+        "label": "5795 - Eunos Flyover, Pan-Island Expressway, Bedok, Northeast, 419592, Singapore"
+    },
+    {
+        "camera_id": 5797,
+        "latitude": 1.322875288,
+        "longitude": 103.8910793,
+        "address": "Paya Lebar Flyover, Paya Lebar Road, Geylang, Southeast, 408942, Singapore",
+        "label": "5797 - Paya Lebar Flyover, Paya Lebar Road, Geylang, Southeast, 408942, Singapore"
+    },
+    {
+        "camera_id": 5798,
+        "latitude": 1.32036078126842,
+        "longitude": 103.877174116489,
+        "address": "Kallang Way, Kallang-Paya Lebar Expressway, Balam Gardens, Geylang, Southeast, 370079, Singapore",
+        "label": "5798 - Kallang Way, Kallang-Paya Lebar Expressway, Balam Gardens, Geylang, Southeast, 370079, Singapore"
+    },
+    {
+        "camera_id": 5799,
+        "latitude": 1.328171608,
+        "longitude": 103.8685191,
+        "address": "Woodsville Flyover, Siang Kuang Avenue, Sennett Estate, Potong Pasir, Southeast, 347919, Singapore",
+        "label": "5799 - Woodsville Flyover, Siang Kuang Avenue, Sennett Estate, Potong Pasir, Southeast, 347919, Singapore"
+    },
+    {
+        "camera_id": 6701,
+        "latitude": 1.329334,
+        "longitude": 103.858222,
+        "address": "Kim Keat Link, Pan-Island Expressway, Novena, Singapore, Central, 328958, Singapore",
+        "label": "6701 - Kim Keat Link, Pan-Island Expressway, Novena, Singapore, Central, 328958, Singapore"
+    },
+    {
+        "camera_id": 6703,
+        "latitude": 1.328899,
+        "longitude": 103.84121,
+        "address": "Thomson Flyover, Jalan Toa Payoh, Novena, Singapore, Central, 297743, Singapore",
+        "label": "6703 - Thomson Flyover, Jalan Toa Payoh, Novena, Singapore, Central, 297743, Singapore"
+    },
+    {
+        "camera_id": 6704,
+        "latitude": 1.32657403632366,
+        "longitude": 103.826857295633,
+        "address": "Mount Pleasant Flyover, Pan-Island Expressway, Novena, Singapore, Central, 297834, Singapore",
+        "label": "6704 - Mount Pleasant Flyover, Pan-Island Expressway, Novena, Singapore, Central, 297834, Singapore"
+    },
+    {
+        "camera_id": 6705,
+        "latitude": 1.332124,
+        "longitude": 103.81768,
+        "address": "Pan-Island Expressway, Novena, Singapore, Central, 289899, Singapore",
+        "label": "6705 - Pan-Island Expressway, Novena, Singapore, Central, 289899, Singapore"
+    },
+    {
+        "camera_id": 6706,
+        "latitude": 1.349428893,
+        "longitude": 103.7952799,
+        "address": "Bukit Timah Expressway, Pan-Island Expressway, Central Water Catchment, Northwest, 286966, Singapore",
+        "label": "6706 - Bukit Timah Expressway, Pan-Island Expressway, Central Water Catchment, Northwest, 286966, Singapore"
+    },
+    {
+        "camera_id": 6708,
+        "latitude": 1.345996,
+        "longitude": 103.69016,
+        "address": "Nanyang Flyover, Pan-Island Expressway, Western Water Catchment, Southwest, 640849, Singapore",
+        "label": "6708 - Nanyang Flyover, Pan-Island Expressway, Western Water Catchment, Southwest, 640849, Singapore"
+    },
+    {
+        "camera_id": 6710,
+        "latitude": 1.344205,
+        "longitude": 103.78577,
+        "address": "Rifle Range Nature Park, Jalan Gaharu, Mayfair Park, Bukit Timah, Northwest, 588405, Singapore",
+        "label": "6710 - Rifle Range Nature Park, Jalan Gaharu, Mayfair Park, Bukit Timah, Northwest, 588405, Singapore"
+    },
+    {
+        "camera_id": 6711,
+        "latitude": 1.33771,
+        "longitude": 103.977827,
+        "address": "Entrance to PIE from ECP Changi, Pan-Island Expressway, Tampines, Southeast, 499803, Singapore",
+        "label": "6711 - Entrance to PIE from ECP Changi, Pan-Island Expressway, Tampines, Southeast, 499803, Singapore"
+    },
+    {
+        "camera_id": 6712,
+        "latitude": 1.332691,
+        "longitude": 103.770278,
+        "address": "Exit 27 to Clementi Avenue 6, Pan-Island Expressway, Bukit Timah, Northwest, 599435, Singapore",
+        "label": "6712 - Exit 27 to Clementi Avenue 6, Pan-Island Expressway, Bukit Timah, Northwest, 599435, Singapore"
+    },
+    {
+        "camera_id": 6713,
+        "latitude": 1.340298,
+        "longitude": 103.945652,
+        "address": "Entrance from Simei Avenue, Pan-Island Expressway, Picardy Gardens, Tampines, Southeast, 520112, Singapore",
+        "label": "6713 - Entrance from Simei Avenue, Pan-Island Expressway, Picardy Gardens, Tampines, Southeast, 520112, Singapore"
+    },
+    {
+        "camera_id": 6714,
+        "latitude": 1.361742,
+        "longitude": 103.703341,
+        "address": "Exit 35 to KJE, KJE, Tengah, Southwest, 648170, Singapore",
+        "label": "6714 - Exit 35 to KJE, KJE, Tengah, Southwest, 648170, Singapore"
+    },
+    {
+        "camera_id": 6715,
+        "latitude": 1.356299,
+        "longitude": 103.716071,
+        "address": "Hong Kah Flyover, Pan-Island Expressway, Hong Kah, Jurong West, Southwest, 640558, Singapore",
+        "label": "6715 - Hong Kah Flyover, Pan-Island Expressway, Hong Kah, Jurong West, Southwest, 640558, Singapore"
+    },
+    {
+        "camera_id": 6716,
+        "latitude": 1.322893,
+        "longitude": 103.6635051,
+        "address": "Tuas Flyover, Jalan Ahmad Ibrahim, Tuas, Southwest, 638481, Singapore",
+        "label": "6716 - Tuas Flyover, Jalan Ahmad Ibrahim, Tuas, Southwest, 638481, Singapore"
+    },
+    {
+        "camera_id": 7791,
+        "latitude": 1.354245,
+        "longitude": 103.963782,
+        "address": "Upper Changi Flyover, Upper Changi Road North, Tampines, Northeast, 520348, Singapore",
+        "label": "7791 - Upper Changi Flyover, Upper Changi Road North, Tampines, Northeast, 520348, Singapore"
+    },
+    {
+        "camera_id": 7793,
+        "latitude": 1.37704704,
+        "longitude": 103.92946983,
+        "address": "Tampines Avenue 10 Entrance, Tampines Expressway, Pasir Ris, Northeast, 510759, Singapore",
+        "label": "7793 - Tampines Avenue 10 Entrance, Tampines Expressway, Pasir Ris, Northeast, 510759, Singapore"
+    },
+    {
+        "camera_id": 7794,
+        "latitude": 1.37988658,
+        "longitude": 103.92009174,
+        "address": "Tampines Expressway, Paya Lebar, Northeast, 520175, Singapore",
+        "label": "7794 - Tampines Expressway, Paya Lebar, Northeast, 520175, Singapore"
+    },
+    {
+        "camera_id": 7795,
+        "latitude": 1.38432741,
+        "longitude": 103.91585701,
+        "address": "Tampines Expressway, Pasir Ris, Northeast, 520175, Singapore",
+        "label": "7795 - Tampines Expressway, Pasir Ris, Northeast, 520175, Singapore"
+    },
+    {
+        "camera_id": 7796,
+        "latitude": 1.39559294,
+        "longitude": 103.90515712,
+        "address": "Exit to Punggol Flyover, Tampines Expressway, Seng Kang, Northeast, 820136, Singapore",
+        "label": "7796 - Exit to Punggol Flyover, Tampines Expressway, Seng Kang, Northeast, 820136, Singapore"
+    },
+    {
+        "camera_id": 7797,
+        "latitude": 1.40002575,
+        "longitude": 103.85702534,
+        "address": "Seletar West Link, Seletar, Central, 798061, Singapore",
+        "label": "7797 - Seletar West Link, Seletar, Central, 798061, Singapore"
+    },
+    {
+        "camera_id": 7798,
+        "latitude": 1.39748842,
+        "longitude": 103.85400467,
+        "address": "Seletar Flyover, Cactus Crescent, Ang Mo Kio, Central, 569061, Singapore",
+        "label": "7798 - Seletar Flyover, Cactus Crescent, Ang Mo Kio, Central, 569061, Singapore"
+    },
+    {
+        "camera_id": 8701,
+        "latitude": 1.38647,
+        "longitude": 103.74143,
+        "address": "Choa Chu Kang West Flyover, Kranji Expressway, Western Water Catchment, Southwest, 680435, Singapore",
+        "label": "8701 - Choa Chu Kang West Flyover, Kranji Expressway, Western Water Catchment, Southwest, 680435, Singapore"
+    },
+    {
+        "camera_id": 8702,
+        "latitude": 1.39059,
+        "longitude": 103.7717,
+        "address": "Gali Batu Flyover, Bukit Timah Expressway, Fajar, Sungei Kadut, Northwest, 670485, Singapore",
+        "label": "8702 - Gali Batu Flyover, Bukit Timah Expressway, Fajar, Sungei Kadut, Northwest, 670485, Singapore"
+    },
+    {
+        "camera_id": 8704,
+        "latitude": 1.3899,
+        "longitude": 103.74843,
+        "address": "Kranji Expressway, Choa Chu Kang, Southwest, 680766, Singapore",
+        "label": "8704 - Kranji Expressway, Choa Chu Kang, Southwest, 680766, Singapore"
+    },
+    {
+        "camera_id": 8706,
+        "latitude": 1.3664,
+        "longitude": 103.70899,
+        "address": "Tengah Flyover, KJE, Jurong West, Southwest, 648170, Singapore",
+        "label": "8706 - Tengah Flyover, KJE, Jurong West, Southwest, 648170, Singapore"
+    },
+    {
+        "camera_id": 9701,
+        "latitude": 1.39466333,
+        "longitude": 103.83474601,
+        "address": "Lentor Flyover, Lower Seletar Close, Yishun, Central, 787833, Singapore",
+        "label": "9701 - Lentor Flyover, Lower Seletar Close, Yishun, Central, 787833, Singapore"
+    },
+    {
+        "camera_id": 9702,
+        "latitude": 1.39474081,
+        "longitude": 103.81797086,
+        "address": "Upper Thomson Flyover, Seletar Expressway, Yishun, Central, 787110, Singapore",
+        "label": "9702 - Upper Thomson Flyover, Seletar Expressway, Yishun, Central, 787110, Singapore"
+    },
+    {
+        "camera_id": 9703,
+        "latitude": 1.422857,
+        "longitude": 103.773005,
+        "address": "Seletar Expressway, Mandai, Northwest, 738581, Singapore",
+        "label": "9703 - Seletar Expressway, Mandai, Northwest, 738581, Singapore"
+    },
+    {
+        "camera_id": 9704,
+        "latitude": 1.42214311,
+        "longitude": 103.79542062,
+        "address": "Ulu Sembawang Flyover, Seletar Expressway, Woodlands, Northwest, 737924, Singapore",
+        "label": "9704 - Ulu Sembawang Flyover, Seletar Expressway, Woodlands, Northwest, 737924, Singapore"
+    },
+    {
+        "camera_id": 9705,
+        "latitude": 1.42627712,
+        "longitude": 103.78716637,
+        "address": "Marsiling Flyover, Seletar Expressway, Woodlands, Northwest, 737913, Singapore",
+        "label": "9705 - Marsiling Flyover, Seletar Expressway, Woodlands, Northwest, 737913, Singapore"
+    },
+    {
+        "camera_id": 9706,
+        "latitude": 1.41270056,
+        "longitude": 103.80642712,
+        "address": "Mandai Lake Flyover, Seletar Expressway, Yishun, Northwest, 779393, Singapore",
+        "label": "9706 - Mandai Lake Flyover, Seletar Expressway, Yishun, Northwest, 779393, Singapore"
+    }
+]

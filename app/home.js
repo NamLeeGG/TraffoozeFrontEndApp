@@ -130,8 +130,11 @@ const Home = () => {
             <TouchableOpacity style={styles.drawerItem} onPress={() => handleNavigation(`/map`)}>
                 <Text style={styles.drawerText}>Map</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.drawerItem} onPress={() => {/* Handle navigation here */}}>
-                <Text style={styles.drawerText}>Traffic Predictions</Text>
+            <TouchableOpacity style={styles.drawerItem} onPress={() => handleNavigation(`/flow`)}>
+                <Text style={styles.drawerText}>Traffic Flow Forecast</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.drawerItem} onPress={() => handleNavigation(`/count`)}>
+                <Text style={styles.drawerText}>Traffic Count Forecast</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.drawerItem} onPress={() => {/* Handle navigation here */}}>
                 <Text style={styles.drawerText}>ERP Rates</Text>

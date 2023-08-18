@@ -6,36 +6,33 @@ import axios from 'axios';
 
 import { COLORS, icons, images, SIZES, FONT } from "../../constants";
 
-const TrafficFlow = () => {
+const TrafficCount = () => {
     const [roads, setRoads] = useState([]);
-    const [selectedRoad, setSelectedRoad] = useState({});  // Changed to an empty object
+    const [selectedRoad, setSelectedRoad] = useState({});
     const [date, setDate] = useState(new Date());
     const [showPicker, setShowPicker] = useState(false);
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState(null);
-
-    const [forecastSpeed, setForecastSpeed] = useState([]);
-    const [forecastTimestamps, setForecastTimestamps] = useState([]);
     const [forecastSummary, setForecastSummary] = useState(null);
 
-
-    const fetchMetadata = async () => {
-        try {
-            const response = await axios.get('https://traffooze-flask.onrender.com/metadata');
-            setRoads(response.data.map(road => ({
-                value: road.road_id,
-                label: road.description
-            })));
-        } catch (error) {
-            setError(error);
-            console.error(error);
-        } finally {
-            setIsLoading(false);
-        }
-    };
-
     useEffect(() => {
-        fetchMetadata();
+        setIsLoading(true);
+
+        // Sample Fetching roads data (Replace this with an actual API call if needed)
+        import('./camera_metadata.json')
+            .then((data) => {
+                const roadData = data.default.map(camera => ({
+                    label: camera.label,
+                    value: camera.camera_id
+                }));
+                setRoads(roadData);
+                setIsLoading(false);
+            })
+            .catch((error) => {
+                console.error('Error loading roads JSON:', error);
+                setError(error);
+                setIsLoading(false);
+            });
     }, []);
 
     const onDateChange = (event, selectedDate) => {
@@ -65,35 +62,16 @@ const TrafficFlow = () => {
             const formattedDate = formatDateToLocalISOString(date);
 
             const requestData = {
-                road_id: roadId,
+                camera_id: roadId,
                 timestamp: formattedDate,
             };
     
-            axios.post('https://traffooze-flask.onrender.com/get_traffic_flow', requestData)
+            axios.post('https://traffooze-flask.onrender.com/get_traffic_count', requestData)
                 .then(response => {
                     // Handle the response here if needed
-
-                    const forecastSpeed = response.data.speed;
-                    const forecastJamfactor = response.data.jamFactor;
-                    const forecastTimestamps = response.data.timestamp;
-
-                    const forecastSeries = [
-                        {
-                            name: 'Speed (Km/h)',
-                            data: forecastSpeed,
-                        },
-                        {
-                            name: 'Jam Factor',
-                            data: forecastJamfactor,
-                        }
-                    ];
-
-                    setForecastSpeed(forecastSeries);
-                    setForecastTimestamps(forecastTimestamps);
                     setForecastSummary({
-                        speed: response.data.speed[0],
-                        jamFactor: response.data.jamFactor[0]
-                    });                                 
+                        numberofvehicles: response.data.count[0],
+                    });                                                                
 
                     setIsLoading(false);
                 })
@@ -152,20 +130,16 @@ const TrafficFlow = () => {
             <TouchableOpacity style={styles.forecastButton} onPress={handleGenerateForecast}>
                 <Text style={styles.forecastButtonText}>Generate Forecast</Text>
             </TouchableOpacity>
-
+            
             {
                 forecastSummary && (
                     <View style={styles.forecastCard}>
-                        <Text style={styles.forecastCardTitle}>Traffic Flow Summary</Text>
+                        <Text style={styles.forecastCardTitle}>Traffic Count Summary</Text>
                         
                         <View style={styles.forecastCardContent}>
                             <View style={styles.forecastDetail}>
-                                <Image source={icons.speed} style={styles.forecastIcon}/>
-                                <Text style={styles.forecastDetailText}>Speed: {forecastSummary.speed} Km/h</Text>
-                            </View>
-                            <View style={styles.forecastDetail}>
-                                <Image source={icons.trafficjam} style={styles.forecastIcon}/>
-                                <Text style={styles.forecastDetailText}>Jam Factor: {forecastSummary.jamFactor}</Text>
+                                <Image source={icons.car} style={styles.forecastIcon}/>
+                                <Text style={styles.forecastDetailText}>Number of Vehicles: {forecastSummary.numberofvehicles}</Text>
                             </View>
                         </View>
                     </View>
@@ -272,4 +246,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default TrafficFlow;
+export default TrafficCount;

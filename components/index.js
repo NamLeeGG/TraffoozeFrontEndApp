@@ -10,6 +10,8 @@ import TrafficUpdateDetail from "./jobdetails/detail/TrafficUpdateDetail";
 
 // common
 import ObjListCard from "./common/cards/all/ObjListCard";
+import TrafficFlow from "./trafficprediction/TrafficFlow";
+import TrafficCount from "./trafficprediction/TrafficCount";
 
 export {
   ScreenHeaderBtn,
@@ -18,4 +20,6 @@ export {
   RecentObjs,
   TrafficUpdateDetail,
   ObjListCard,
+  TrafficFlow,
+  TrafficCount,
 };
