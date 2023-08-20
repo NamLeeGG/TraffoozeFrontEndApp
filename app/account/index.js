@@ -116,17 +116,42 @@ const AccountPage = () => {
     };
     
 
-    const handleLogOut = () => {
+    const handleLogOut = async () => {
         setLoading(true);
-
-        global.token = null;
-        global.accountname = null;
-
-        setLoading(false);
-
-        Alert.alert('Success', 'You have successfully logged out!', [
-            { text: 'OK', onPress: () => router.back() }
-        ]);
+        
+        try {
+            const response = await axios.post(
+                "https://traffoozebackend.vercel.app/logout/",
+                {},
+                {
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Token ${global.token}`,
+                    },
+                }
+            );
+    
+            // Check the status code of the logout API
+            if (response.status === 200) {
+                // Clear global tokens and account name after a successful API call
+                global.token = null;
+                global.accountname = null;
+    
+                // Provide feedback to the user
+                Alert.alert('Success', 'You have successfully logged out!', [
+                    { text: 'OK', onPress: () => router.back() }
+                ]);
+            } else {
+                // If the API didn't return a 200 status, show an error message
+                Alert.alert('Error', response.data.message || 'Failed to log out.');
+            }
+        } catch (error) {
+            // Handle any errors during the API call
+            console.log(error);
+            Alert.alert('Error', 'An unexpected error occurred. Please try again.');
+        } finally {
+            setLoading(false);
+        }
     };
 
     return (
@@ -153,10 +178,10 @@ const AccountPage = () => {
                     <View
                         style={styles.cardContainer}
                     >
-                        <Text style={{ ...FONT.regular, marginBottom: SIZES.medium, fontSize: SIZES.medium }}>Account Name: </Text>
+                        <Text style={{ marginBottom: SIZES.medium, fontSize: SIZES.medium }}>Account Name: </Text>
                         <Text style={styles.accountNameText}>{global.accountname}</Text>
 
-                        <Text style={{ ...FONT.regular, marginBottom: SIZES.medium, fontSize: SIZES.medium }}>
+                        <Text style={{ marginBottom: SIZES.medium, fontSize: SIZES.medium }}>
                             Current Email: {currentEmail}
                         </Text>
                         <InputField
@@ -243,7 +268,6 @@ const styles = StyleSheet.create({
         elevation: 5,
     },
     accountNameText: {
-        ...FONT.bold,
         fontSize: SIZES.xxLarge, // adjust as needed for size
         marginBottom: SIZES.xxLarge+20,
     },

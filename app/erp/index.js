@@ -45,18 +45,10 @@ const erpPage = () => {
         fetchData();
     }, []);
 
-    if (loading) {
-        return (
-            <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center',}}>
-                <ActivityIndicator size="large" color={COLORS.primary} />
-            </View>
-        );
-    };
-
     return (
         <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.lightestBlue }}>
             <StatusBar style="dark" />
-  
+
             <Stack.Screen
                 options={{
                     headerStyle: { backgroundColor: COLORS.lightestBlue },
@@ -71,20 +63,26 @@ const erpPage = () => {
                     headerTitle: "ERP Rates",
                 }}
             />
-  
+
             <ScrollView showsVerticalScrollIndicator={false}>
                 <View
                     style={{
                         flex: 1,
                         padding: SIZES.medium,
+                        justifyContent: 'center', // added to center the loading
+                        alignItems: 'center', // added to center the loading
                     }}
                 >
-                    {data.map((item) => (
-                        <ERPDataCard key={item._id} item={item} />
-                    ))}
+                    {loading ? (
+                        <ActivityIndicator size="large" color={COLORS.primary} />
+                    ) : (
+                        data.map((item) => (
+                            <ERPDataCard key={item._id} item={item} />
+                        ))
+                    )}
                 </View>
             </ScrollView>
-  
+
         </SafeAreaView>
     );
 
@@ -106,7 +104,6 @@ const styles = StyleSheet.create({
         elevation: 5
     },
     cardText: {
-        fontSize: FONT.regular,
         marginVertical: 5
     }
 });
