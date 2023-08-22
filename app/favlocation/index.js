@@ -13,10 +13,15 @@ const FavLocationPage = () => {
 
     const [locations, setLocations] = useState([]);
     const [loading, setLoading] = useState(true);
+
     const [homeAddress, setHomeAddress] = useState("");
     const [workAddress, setWorkAddress] = useState("");
+
     const [currenthomeAddress, setCurrentHomeAddress] = useState("");
     const [currentworkAddress, setCurrentWorkAddress] = useState("");
+
+    const [deleteHome, setDeleteHome] = useState(false);
+    const [deleteWork, setDeleteWork] = useState(false);
 
     const fetchData = async () => {
         try {
@@ -69,6 +74,34 @@ const FavLocationPage = () => {
         }
     };
 
+    const handleDeleteAddress = async () => {
+        const deleteHomeValue = deleteHome ? "" : currenthomeAddress;
+        const deleteWorkValue = deleteWork ? "" : currentworkAddress;
+    
+        try {
+            const response = await axios.post('https://traffoozebackend.vercel.app/update-address/', {
+                username: global.accountname,
+                homeAddress: deleteHomeValue,
+                workAddress: deleteWorkValue
+            });
+    
+            if (response.status === 200) {
+                Alert.alert('Success', 'Address deleted successfully!');
+                fetchData();
+            } else {
+                console.error('Unexpected status code returned:', response.status);
+                Alert.alert('Error', 'Failed to delete the address. Please try again.');
+            }
+    
+        } catch (error) {
+            console.error('Error deleting address:', error);
+            Alert.alert('Error', 'Failed to delete the address. Please try again.');
+        }
+    
+        setDeleteHome(false);
+        setDeleteWork(false);
+    };    
+
     return (
         <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.lightestBlue }}>
             <StatusBar style="dark" />
@@ -103,6 +136,7 @@ const FavLocationPage = () => {
                     </View>
 
                     <View style={styles.card}>
+                        <Text style={styles.deleteLabel}>Update Address:</Text>
                         <Dropdown
                             style={styles.dropdown}
                             placeholderStyle={styles.placeholderStyle}
@@ -129,6 +163,25 @@ const FavLocationPage = () => {
                             <Text style={styles.buttonText}>Update Addresses</Text>
                         </TouchableOpacity>
                     </View>
+
+                    <View style={styles.card}>
+                        <Text style={styles.deleteLabel}>Delete Address:</Text>
+                        
+                        <View style={styles.checkboxContainer}>
+                            <Text style={styles.checkboxText}>Home Address:</Text>
+                            <TouchableOpacity style={deleteHome ? styles.checkboxChecked : styles.checkbox} onPress={() => setDeleteHome(!deleteHome)} />
+                        </View>
+
+                        <View style={styles.checkboxContainer}>
+                            <Text style={styles.checkboxText}>Work Address:</Text>
+                            <TouchableOpacity style={deleteWork ? styles.checkboxChecked : styles.checkbox} onPress={() => setDeleteWork(!deleteWork)} />
+                        </View>
+
+                        <TouchableOpacity style={styles.deleteButton} onPress={handleDeleteAddress}>
+                            <Text style={styles.buttonText}>Delete Selected Addresses</Text>
+                        </TouchableOpacity>
+                    </View>
+
                 </View>
             )}
         </SafeAreaView>
@@ -140,7 +193,6 @@ const styles = StyleSheet.create({
         flex: 1,
         padding: SIZES.medium,
         backgroundColor: COLORS.lightestBlue,
-        marginTop: 50,
     },
     card: {
         marginBottom: 20,
@@ -187,6 +239,7 @@ const styles = StyleSheet.create({
     addressCard: {
         marginBottom: 20,
         padding: 20,
+        paddingBottom: -3,
         borderRadius: 20,
         backgroundColor: 'white',
         shadowColor: '#000',
@@ -216,6 +269,47 @@ const styles = StyleSheet.create({
         borderBottomColor: COLORS.lightBlue,
         borderBottomWidth: 1,
         paddingBottom: 10,
+    },
+    deleteLabel: {
+        fontSize: SIZES.large,
+        fontWeight: 'bold',
+        color: COLORS.black,
+        marginBottom: 10,
+    },
+    checkboxContainer: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        marginBottom: 10,
+        marginLeft: 20,
+    },
+    checkbox: {
+        width: 25,
+        height: 25,
+        marginLeft: 10,
+        borderWidth: 1,
+        borderColor: COLORS.darkBlue,
+        borderRadius: 4,
+    },
+    checkboxText: {
+        color: COLORS.darkBlue,
+        fontSize: SIZES.medium,
+    },
+    checkboxChecked: {
+        width: 20,
+        height: 20,
+        marginLeft: 10,
+        backgroundColor: COLORS.darkBlue,
+        borderWidth: 1,
+        borderColor: COLORS.darkBlue,
+        borderRadius: 4,
+    },
+    deleteButton: {
+        marginTop: 10,
+        height: 50,
+        backgroundColor: 'red',
+        borderRadius: 10,
+        justifyContent: 'center',
+        alignItems: 'center',
     },
 });
 
