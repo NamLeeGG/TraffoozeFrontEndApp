@@ -234,7 +234,7 @@ const TrafficFlow = () => {
                         <View style={styles.forecastCardContent}>
                             <View style={styles.forecastDetail}>
                                 <Image source={icons.speed} style={styles.forecastIcon}/>
-                                <Text style={styles.forecastDetailText}>Speed: {forecastSummary.speed} Km/h</Text>
+                                <Text style={styles.forecastDetailText}>Speed: {forecastSummary.speed} m/s</Text>
                             </View>
                             <View style={styles.forecastDetail}>
                                 <Image source={icons.trafficjam} style={styles.forecastIcon}/>
