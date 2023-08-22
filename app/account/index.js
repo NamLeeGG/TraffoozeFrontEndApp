@@ -214,7 +214,7 @@ const AccountPage = () => {
                             onChangeText={(text) => setPassword(text)}
                         />
 
-                        <View style={styles.buttonsContainer}>
+                        <View style={styles.buttonsTopContainer}>
                             <TouchableOpacity
                                 onPress={handleUpdate}
                                 style={styles.updateButton}>
@@ -239,6 +239,14 @@ const AccountPage = () => {
                                 )}
                             </TouchableOpacity>
                         </View>
+
+                        <TouchableOpacity
+                            onPress={() => router.push(`/favlocation`)}
+                            style={{ ...styles.favLocationButton, ...styles.commonButtonStyle, ...styles.bottomButton }}>
+                            <Text style={styles.buttonText}>
+                                Favorite Location
+                            </Text>
+                        </TouchableOpacity>
                     </View>
                 </View>
             </SafeAreaView>
@@ -250,8 +258,8 @@ const AccountPage = () => {
 
 const styles = StyleSheet.create({
     cardContainer: {
-        flex: 0.6,
-        width: '80%', // optional, if you want the card width to be less than the screen width
+        flex: 0.65,
+        width: '80%',
         margin: SIZES.medium,
         padding: SIZES.medium,
         borderRadius: 20,
@@ -268,34 +276,60 @@ const styles = StyleSheet.create({
         elevation: 5,
     },
     accountNameText: {
-        fontSize: SIZES.xxLarge, // adjust as needed for size
+        fontSize: SIZES.xxLarge, 
         marginBottom: SIZES.xxLarge+20,
     },
     buttonsContainer: {
         flexDirection: 'row',
         justifyContent: 'space-between',
-        width: '100%', // adjust as necessary
+        width: '100%', 
         marginTop: 40,
     },
+    buttonsTopContainer: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        width: '100%', 
+        marginBottom: 20, 
+    },
     updateButton: {
-        backgroundColor: COLORS.blue, // choose a color for the update button
+        backgroundColor: COLORS.blue, 
         padding: 20,
         borderRadius: 10,
         flex: 1,
-        marginRight: 15,  // spacing between the two buttons
+        marginRight: 15, 
     },
     logoutButton: {
         backgroundColor: 'red',
         padding: 20,
         borderRadius: 10,
         flex: 1,
-        marginLeft: 15,  // spacing between the two buttons
+        marginLeft: 15,  
     },
     buttonText: {
         textAlign: 'center',
         fontWeight: '700',
         fontSize: 16,
         color: '#fff',
+    },
+    bottomButton: {
+        marginTop: 20, 
+        width: '100%',  
+    },
+    commonButtonStyle: {
+        marginHorizontal: 10,
+        padding: 20,
+        borderRadius: 10,
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 2,
+        },
+        shadowOpacity: 0.3,
+        shadowRadius: 4,
+        elevation: 5,
+    },
+    favLocationButton: {
+        backgroundColor: '#2D9CDB', // Feel free to change to another distinct color
     },
 });
 
